@@ -5,6 +5,10 @@ const startFolderAnimation = () => {
 
     // Dynamically establish how low the folder should be moved
     animationContainer.style.transform = `translateY(${calculateSectionsHeight(sections)})`;
+
+    // dynamically establish how long should the folder move
+    animationContainer.style.transition = `transform ${0.5 * sections.length}s`
+
     folderCover.style.animation = "open-folder 3s ease-out forwards 1s";
 
 
