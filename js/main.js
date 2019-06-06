@@ -5,9 +5,11 @@ const startFolderAnimation = () => {
 
     // Dynamically establish how low the folder should be moved
     animationContainer.style.transform = `translateY(${calculateSectionsHeight(sections)})`;
-    folderCover.style.animation = "open-folder 10s ease-out forwards 1s";
+    folderCover.style.animation = "open-folder 3s ease-out forwards 1s";
 
-    
+
+    fadeInSections(sections);
+
   }
 
 
@@ -20,6 +22,13 @@ const startFolderAnimation = () => {
 
     return (heightPx + 'px')
   }
-  
+
+
+// dynamically assign opcaity depanding of number of those
+const fadeInSections = (sections) => {
+    sections.forEach((section, index)=> {
+        section.style.animation ="show-section 1s ease-in forwards 1s";
+    })
+}
   
   startFolderAnimation()
